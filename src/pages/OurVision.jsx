@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OurVision = () => {
   return (
@@ -10,7 +11,7 @@ const OurVision = () => {
             Our Vision
           </h1>
           <div className="text-center text-gray-600">
-            <span>Home</span>
+            <Link to="/" className="hover:text-green-700">Home</Link>
             <span className="mx-2">{'>'}</span>
             <span>About us</span>
             <span className="mx-2">{'>'}</span>
@@ -48,12 +49,6 @@ const OurVision = () => {
                 alt="World Food Day - Celebrate 4K Around World" 
                 className="rounded-lg shadow-xl w-full h-auto object-cover"
               />
-              {/* Optional: Add overlay text if needed */}
-              <div className="absolute top-8 left-8 text-orange-600">
-                <p className="text-sm font-semibold tracking-wide">CELEBRATING</p>
-                <h3 className="text-4xl font-bold">World Food Day</h3>
-                <p className="text-lg font-medium">CELEBRATE 4K ABOUND WORLD</p>
-              </div>
             </div>
           </div>
         </div>

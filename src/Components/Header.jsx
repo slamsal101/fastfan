@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
@@ -6,6 +7,7 @@ const Header = () => {
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
+  const location = useLocation();
   
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -17,7 +19,7 @@ const Header = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsAboutDropdownOpen(false);
-    }, 300); // 300ms delay before closing
+    }, 300);
   };
   
   useEffect(() => {
@@ -27,6 +29,14 @@ const Header = () => {
       }
     };
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsAboutDropdownOpen(false);
+  }, [location]);
+  
+  const isAboutActive = location.pathname.startsWith('/about');
   
   return (
     <header className="bg-white shadow-sm">
@@ -49,7 +59,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">FF</span>
             </div>
@@ -57,7 +67,7 @@ const Header = () => {
               <div className="text-2xl font-bold text-green-700">FAST-FAN</div>
               <div className="text-xs text-gray-600">Fastfood Association Nepal</div>
             </div>
-          </div>
+          </Link>
           
           {/* Mobile Menu Toggle */}
           <button 
@@ -72,9 +82,14 @@ const Header = () => {
             isMenuOpen ? 'flex' : 'hidden'
           } md:flex flex-col md:flex-row gap-6 absolute md:relative top-16 md:top-0 left-0 right-0 bg-white md:bg-transparent p-4 md:p-0 shadow-lg md:shadow-none z-40`}>
             <li>
-              <a href="/" className="hover:text-green-700 transition font-medium">
+              <Link 
+                to="/" 
+                className={`hover:text-green-700 transition font-medium ${
+                  location.pathname === '/' ? 'text-green-700 font-semibold' : ''
+                }`}
+              >
                 Home
-              </a>
+              </Link>
             </li>
             
             {/* About Us Dropdown */}
@@ -85,7 +100,9 @@ const Header = () => {
               onMouseLeave={handleMouseLeave}
             >
               <button 
-                className="flex items-center gap-1 text-green-700 font-semibold border-b-2 border-green-700 pb-1 hover:text-green-800 transition"
+                className={`flex items-center gap-1 font-semibold hover:text-green-800 transition ${
+                  isAboutActive ? 'text-green-700 border-b-2 border-green-700 pb-1' : ''
+                }`}
                 onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
               >
                 About Us
@@ -103,51 +120,76 @@ const Header = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <a 
-                  href="/about/overview" 
+                <Link 
+                  to="/about/overview" 
                   className="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition"
                 >
                   Association Overview
-                </a>
-                <a 
-                  href="/about/vision" 
+                </Link>
+                <Link 
+                  to="/about/vision" 
                   className="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition"
                 >
                   Our Vision
-                </a>
-                <a 
-                  href="/about/chairman" 
+                </Link>
+                <Link 
+                  to="/about/chairman" 
                   className="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition"
                 >
                   From Chairman
-                </a>
+                </Link>
               </div>
             </li>
             
             <li>
-              <a href="/committee" className="hover:text-green-700 transition font-medium">
+              <Link 
+                to="/committee" 
+                className={`hover:text-green-700 transition font-medium ${
+                  location.pathname === '/committee' ? 'text-green-700 font-semibold' : ''
+                }`}
+              >
                 Our Committee
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/members" className="hover:text-green-700 transition font-medium">
+              <Link 
+                to="/members" 
+                className={`hover:text-green-700 transition font-medium ${
+                  location.pathname === '/members' ? 'text-green-700 font-semibold' : ''
+                }`}
+              >
                 Members
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/news" className="hover:text-green-700 transition font-medium">
+              <Link 
+                to="/news" 
+                className={`hover:text-green-700 transition font-medium ${
+                  location.pathname === '/news' ? 'text-green-700 font-semibold' : ''
+                }`}
+              >
                 News & Notices
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/events" className="hover:text-green-700 transition font-medium">
+              <Link 
+                to="/events" 
+                className={`hover:text-green-700 transition font-medium ${
+                  location.pathname === '/events' ? 'text-green-700 font-semibold' : ''
+                }`}
+              >
                 Events
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-green-700 transition font-medium">
+              <Link 
+                to="/contact" 
+                className={`hover:text-green-700 transition font-medium ${
+                  location.pathname === '/contact' ? 'text-green-700 font-semibold' : ''
+                }`}
+              >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
           

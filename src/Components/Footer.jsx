@@ -19,11 +19,11 @@ const Footer = () => {
           {/* About Column */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#25883d] rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">FF</span>
               </div>
               <div>
-                <div className="font-bold text-green-700 text-lg">FAST-FAN</div>
+                <div className="font-bold text-[#25883d] text-lg">FAST-FAN</div>
                 <div className="text-xs text-gray-600">Fastfood Association Nepal</div>
               </div>
             </div>
@@ -111,7 +111,7 @@ const Footer = () => {
           
           {/* Newsletter Column */}
           <div>
-            <h3 className="font-bold text-gray-800 mb-4">Subscribe to our newsletter</h3>
+            <h3 className="font-bold text-gray-800 mb-4">Subscribe to our newsLetter</h3>
             <p className="text-sm text-gray-600 mb-4">
               The latest news, articles, and resources, sent to your inbox weekly
             </p>
@@ -126,7 +126,7 @@ const Footer = () => {
               />
               <button 
                 type="submit"
-                className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded font-semibold transition"
+                className="bg-[#25883d] hover:bg-green-800 text-white px-6 py-2 rounded font-semibold transition"
               >
                 Submit
               </button>

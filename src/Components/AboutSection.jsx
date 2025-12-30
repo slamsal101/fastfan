@@ -26,12 +26,12 @@ const AboutSection = () => {
           
           {/* Content */}
           <div>
-            <p className="text-green-600 font-semibold mb-2 uppercase tracking-wide">
+            <p className="text-[#25883d] font-semibold mb-2 uppercase tracking-wide">
               About us
             </p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
               Want To Know More About{' '}
-              <span className="text-green-600">Food Association Nepal</span>
+              <span className="text-[#25883d]">Food Association Nepal</span>
             </h2>
             <p className="text-gray-600 italic mb-4 text-lg">
               Preserving our rich culinary heritage while advancing Nepal's food 
@@ -45,7 +45,7 @@ const AboutSection = () => {
             </p>
             <a 
               href="#about" 
-              className="text-green-600 font-semibold flex items-center gap-2 hover:gap-3 transition-all group"
+              className="text-[#25883d] font-semibold flex items-center gap-2 hover:gap-3 transition-all group"
             >
               See More 
               <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />

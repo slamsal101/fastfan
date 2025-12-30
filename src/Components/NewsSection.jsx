@@ -6,7 +6,7 @@ const NewsSection = () => {
   
   const newsArticles = [
     {
-      title: "Nepal Introduces New National Food Safety Guidelines",
+      title: "Nepal Introduces New National Food Safety Standards",
       excerpt: "In this article, I won't talk about the general concepts of typography, which can be used both in print...",
       date: "Jun 27, 2020",
       timeAgo: "6 min ago",

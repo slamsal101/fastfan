@@ -51,17 +51,17 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
             {slides[currentSlide].title}
           </h1>
-          <p className="text-lg md:text-xl mb-8 animate-fade-in">
+          <p className="text-lg md:text-xl mb-8 animate-fade-in opacity-90">
             {slides[currentSlide].description}
           </p>
           <div className="flex gap-4">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded font-semibold transition transform hover:scale-105">
+            <button className="bg-[#25883d] hover:bg-[#25883d] text-white px-6 py-3 rounded font-semibold transition transform hover:scale-105">
               Contact Us
             </button>
-            <button className="bg-white bg-opacity-80 hover:bg-opacity-70 text-black px-6 py-3 rounded font-semibold backdrop-blur transition">
+            <button className="bg-[#FFFFFF20]   hover:bg-opacity-20 text-white  border-[1px] border-white  px-6 py-3 rounded font-semibold backdrop-blur transition">
               Explore more
             </button>
-          </div>
+          </div>  
         </div>
       </div>
       

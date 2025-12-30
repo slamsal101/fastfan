@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AssociationOverview = () => {
   return (
@@ -10,7 +11,7 @@ const AssociationOverview = () => {
             Association Overview
           </h1>
           <div className="text-center text-gray-600">
-            <span>Home</span>
+            <Link to="/" className="hover:text-green-700">Home</Link>
             <span className="mx-2">{'>'}</span>
             <span>About us</span>
             <span className="mx-2">{'>'}</span>

@@ -1,69 +1,58 @@
 import React from 'react';
 import Header from './Components/Header';
-import HeroSection from './Components/HeroSection';
-import AboutSection from './Components/AboutSection';
-import CommitmentSection from './Components/CommitmentSection';
-import NewsSection from './Components/NewsSection';
-import EventsSection from './Components/EventsSection';
 import Footer from './Components/Footer';
+import { BrowserRouter as Router , Routes , Route} from 'react-router-dom';
 
-// About Us Pages
+import HomePage from './pages/HomePage'
 import AssociationOverview from './pages/AssociationOverview';
 import OurVision from './pages/OurVision';
 import FromChairman from './pages/FromChairman';
+import Members from './pages/Members';
+import MemberDetail from './pages/MemberDetail';
 
-const App = () => {
-  // Simple routing based on URL path
-  const path = window.location.pathname;
 
-  // Render different pages based on path
-  const renderPage = () => {
-    switch(path) {
-      case '/about/overview':
-        return (
-          <>
-            <Header />
-            <AssociationOverview />
-            <Footer />
-          </>
-        );
-      case '/about/vision':
-        return (
-          <>
-            <Header />
-            <OurVision />
-            <Footer />
-          </>
-        );
-      case '/about/chairman':
-        return (
-          <>
-            <Header />
-            <FromChairman />
-            <Footer />
-          </>
-        );
-      default:
-        // Home page
-        return (
-          <>
-            <Header />
-            <HeroSection />
-            <AboutSection />
-            <CommitmentSection />
-            <NewsSection />
-            <EventsSection />
-            <Footer />
-          </>
-        );
-    }
-  };
+const Layout =({children}) => {
+return (
+  <div className="min-h-screen flex flex-col">
+  <Header/>
+  <main className="flex-grow">
+    {children}
+  </main>
+  <Footer/>
+  </div>
+);
+};
 
-  return (
-    <div className="min-h-screen">
-      {renderPage()}
-    </div>
-  );
+const App =() => {
+return(
+  <Router>
+    <Layout>
+      <Routes>
+        {/* homepage */}
+        <Route path ="/" element={<HomePage/>}/>
+
+        {/* aboutus page */}
+        <Route path="/about/overview" element={<AssociationOverview/>}/>
+        <Route path="/about/vision" element={<OurVision/>}/>
+        <Route path="/about/chairman" element={<FromChairman/>}/>
+
+
+        {/* members pages*/}
+        <Route path="/members" element={<Members/>}/>
+        <Route path="/members/:id" element={<MemberDetail/>}/>
+
+        {/* other pages */}
+        <Route path="/committee" element={<div className="py-20 text-center">Committee Page - Coming Soon</div>} />
+        <Route path="/news" element={<div className="py-20 text-center">News Page - coming soon</div>}/>
+        <Route path="/events" element={<div className="py-20 text-center">Events Page - coming soon</div>}/>
+        <Route path="/contact" element={<div className="py-20 text-center">Contact Page - coming soon</div>}/>
+        
+
+      </Routes>
+    </Layout>
+  </Router>
+
+);
 };
 
 export default App;
