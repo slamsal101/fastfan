@@ -9,6 +9,8 @@ import OurVision from './pages/OurVision';
 import FromChairman from './pages/FromChairman';
 import Members from './pages/Members';
 import MemberDetail from './pages/MemberDetail';
+import OurCommittee from './pages/OurCommittee';
+import Events from './pages/Events';
 
 
 const Layout =({children}) => {
@@ -42,9 +44,16 @@ return(
         <Route path="/members/:id" element={<MemberDetail/>}/>
 
         {/* other pages */}
-        <Route path="/committee" element={<div className="py-20 text-center">Committee Page - Coming Soon</div>} />
+        <Route path="/committee" element={<OurCommittee/>} />
+
+
+
         <Route path="/news" element={<div className="py-20 text-center">News Page - coming soon</div>}/>
-        <Route path="/events" element={<div className="py-20 text-center">Events Page - coming soon</div>}/>
+
+
+        <Route path="/events" element={<Events/>}/>
+
+
         <Route path="/contact" element={<div className="py-20 text-center">Contact Page - coming soon</div>}/>
         
 
@@ -56,3 +65,4 @@ return(
 };
 
 export default App;
+

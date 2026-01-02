@@ -113,13 +113,76 @@ const MemberDetail =() => {
             </div>
           </div>
         </div>
+        {/* contentgrid */}
+
+        <div className="grid md:grid-cols-3 gap-8 pb-16">
+            {/* contactdetails..left sidebar */}
+            <div className="md:col-span-1">
+                <div className="bg-whiite-border-2 border-gray-200 rounded-lg p-6">
+                    <div className=" flex items-center gap-2 mb-6">
+                        <div className="w-8 h-8 bg-green-100 rounded flex items-center justify-center">
+                           <Mail size={18} className="text-green-700"/>
+                        </div>
+                         <h3 className="text-xl font-bold text-gray-800"> Contact Details</h3>
+                    </div>
+                    <div className="space-y-4">
+                        {/* Email */}
+                        <div>
+                            <p className="text-sm font-semibold text-gray-700 mb-1">
+                                Email Address
+                            </p>
+                            <p className="text-gray-600">
+                               {member.email}
+                            </p>
+                        </div>
+                           <div>
+                            <p className="text-sm font-semibold text-gray-700 mb-1">
+                                Phone
+                            </p>
+                            <p className="text-gray-600">
+                                {member.phone}
+                            </p>
+                           </div>
+
+                           <div>
+                            <p className="text-sm font-semibold text-gray-700 mb-1">
+                               Address
+                            </p>
+                            <p className= "text-gray-600">
+                                {member.address}
+                            </p>
+                           </div>
+                            <div>
+                                <p className="text-sm font-semibold text-gray-700 mb-1">
+                                    
+                                 Owner
+                                </p>
+                                <p className="text-gray-600">
+                                  {member.owner}
+                                </p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+              <div className="md:col-span-2">
+                <div className="bg-white rounded-lg">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                      About Us 
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed">
+                     {member.about}
+                    </p>
+                </div>
+              </div>
+              <div>
+                <p className=" text-2xl font-bold text-gray-800 mb-4">
+                    Additional querries
+                </p>
+              </div>
+        </div>
        </div>
        </div>         
-                
-              
-       
-        
-        
+                    
     )
 
 }
