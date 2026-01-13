@@ -129,7 +129,7 @@ const OurCommittee = () => {
       {/* Breadcrumb Section */}
       <section className="bg-green-100 py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
+          <h1 className="text-4xl font-bold text-center text-green-800 mb-4">
             Our Committee
           </h1>
           <div className="text-center text-gray-600">

@@ -46,24 +46,27 @@ const HeroSection = () => {
 
       
       {/* Content */}
-      <div className="relative container mx-auto px-4 h-full flex items-center">
-        <div className="text-white max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
-            {slides[currentSlide].title}
-          </h1>
-          <p className="text-lg md:text-xl mb-8 animate-fade-in opacity-90">
-            {slides[currentSlide].description}
-          </p>
-          <div className="flex gap-4">
-            <button className="bg-[#25883d] hover:bg-[#25883d] text-white px-6 py-3 rounded font-semibold transition transform hover:scale-105">
-              Contact Us
-            </button>
-            <button className="bg-[#FFFFFF20]   hover:bg-opacity-20 text-white  border-[1px] border-white  px-6 py-3 rounded font-semibold backdrop-blur transition">
-              Explore more
-            </button>
-          </div>  
+        <div className="relative h-full flex items-center">
+          <div className="max-w-6xl mx-auto px-6 w-full">
+            <div className="text-white max-w-2xl">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+                {slides[currentSlide].title}
+              </h1>
+              <p className="text-lg md:text-xl mb-8 animate-fade-in opacity-90">
+                {slides[currentSlide].description}
+              </p>
+              <div className="flex gap-4">
+                <button className="bg-[#25883d] text-white px-6 py-3 rounded font-semibold transition transform hover:scale-105">
+                  Contact Us
+                </button>
+                <button className="bg-[#FFFFFF20] border border-white px-6 py-3 rounded font-semibold backdrop-blur transition">
+                  Explore more
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
       
       {/* Navigation Arrows */}
       <button

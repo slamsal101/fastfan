@@ -3,7 +3,7 @@ import React from 'react';
 const CommitmentSection = () => {
   return (
     <section className="py-16 bg-[#F3FAEF]">
-      <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div>
@@ -24,7 +24,7 @@ const CommitmentSection = () => {
               <img 
                 src="/c1.png" 
                 alt="Diverse team of food industry professionals" 
-                className=" object-cover w-full h-[460px] md:h-[480px]  shadow-xl hover:scale-105 transition-transform duration-200"
+                className=" object-cover w-full h-[460px] md:h-[480px]"
               />
             </div>
           </div>

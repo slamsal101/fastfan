@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import { BrowserRouter as Router , Routes , Route} from 'react-router-dom';
 
-import HomePage from './pages/HomePage'
+import HomePage from './pages/HomePage';
 import AssociationOverview from './pages/AssociationOverview';
 import OurVision from './pages/OurVision';
 import FromChairman from './pages/FromChairman';
@@ -11,13 +11,17 @@ import Members from './pages/Members';
 import MemberDetail from './pages/MemberDetail';
 import OurCommittee from './pages/OurCommittee';
 import Events from './pages/Events';
+import EventDetail from './pages/EventDetail';
+import NewsDetail from './pages/NewsDetail';
+import NewsNotices from './pages/NewsNotices';
+import ContactUs from './pages/ContactUs';
 
 
 const Layout =({children}) => {
 return (
   <div className="min-h-screen flex flex-col">
   <Header/>
-  <main className="flex-grow">
+  <main className="grow">
     {children}
   </main>
   <Footer/>
@@ -48,13 +52,16 @@ return(
 
 
 
-        <Route path="/news" element={<div className="py-20 text-center">News Page - coming soon</div>}/>
+        {/* news pages */}
+          <Route path="/news" element={<NewsNotices />} />
+          <Route path="/news/:id" element={<NewsDetail />} />
 
 
         <Route path="/events" element={<Events/>}/>
+        <Route path="/events/:id" element={<EventDetail />} />
 
 
-        <Route path="/contact" element={<div className="py-20 text-center">Contact Page - coming soon</div>}/>
+        <Route path="/contact" element={<ContactUs/>}/>
         
 
       </Routes>

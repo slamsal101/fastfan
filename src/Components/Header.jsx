@@ -39,35 +39,37 @@ const Header = () => {
   const isAboutActive = location.pathname.startsWith('/about');
   
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white ">
       {/* Top Bar */}
-      <div className="bg-green-700 text-white py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center text-sm">
-          <div className="flex gap-4">
-            <Facebook size={18} className="cursor-pointer hover:opacity-80" />
-            <Twitter size={18} className="cursor-pointer hover:opacity-80" />
-            <Instagram size={18} className="cursor-pointer hover:opacity-80" />
-          </div>
-          <div className="hidden md:flex gap-4">
-            <span>📞 985868569, 98552896</span>
-            <span>✉️ foodassociationnepal@gmail.com</span>
-          </div>
-        </div>
-      </div>
+      <div className="bg-[#25883d] text-white py-2">
+  <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm">
+    <div className="flex gap-4">
+      <Facebook size={16} />
+      <Twitter size={16} />
+      <Instagram size={16} />
+    </div>
+    <div className="hidden md:flex gap-6">
+      <span className="flex items-center gap-1">📞 985868569, 98552896</span>
+      <span className="flex items-center gap-1">✉️ foodassociationnepal@gmail.com</span>
+    </div>
+  </div>
+</div>
+
       
       {/* Main Navigation */}
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">FF</span>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-green-700">FAST-FAN</div>
-              <div className="text-xs text-gray-600">Fastfood Association Nepal</div>
-            </div>
-          </Link>
+      <nav className="bg-white border-b border-white">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="flex items-center justify-between h-20">
+
+      {/* LOGO */}
+      <Link to="/" className="flex items-center gap-3 shrink-0">
+        <img
+          src="/logo.png"
+          alt="FAST-FAN Logo"
+          className="h-12 w-auto object-contain"
+        />
+      </Link>
+      
           
           {/* Mobile Menu Toggle */}
           <button 
@@ -84,7 +86,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/" 
-                className={`hover:text-green-700 transition font-medium ${
+                className={`hover:text-[#047857] transition font-medium ${
                   location.pathname === '/' ? 'text-green-700 font-semibold' : ''
                 }`}
               >
@@ -122,19 +124,19 @@ const Header = () => {
               >
                 <Link 
                   to="/about/overview" 
-                  className="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition"
+                  className="block px-4 py-3 hover:bg-green-50 hover:text-[#047857] transition"
                 >
                   Association Overview
                 </Link>
                 <Link 
                   to="/about/vision" 
-                  className="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition"
+                  className="block px-4 py-3 hover:bg-green-50 hover:text-[#047857] transition"
                 >
                   Our Vision
                 </Link>
                 <Link 
                   to="/about/chairman" 
-                  className="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition"
+                  className="block px-4 py-3 hover:bg-green-50 hover:text-[#047857] transition"
                 >
                   From Chairman
                 </Link>
@@ -144,7 +146,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/committee" 
-                className={`hover:text-green-700 transition font-medium ${
+                className={`hover:text-[#047857] transition font-medium ${
                   location.pathname === '/committee' ? 'text-green-700 font-semibold' : ''
                 }`}
               >
@@ -154,7 +156,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/members" 
-                className={`hover:text-green-700 transition font-medium ${
+                className={`hover:text-[#047857] transition font-medium ${
                   location.pathname === '/members' ? 'text-green-700 font-semibold' : ''
                 }`}
               >
@@ -164,7 +166,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/news" 
-                className={`hover:text-green-700 transition font-medium ${
+                className={`hover:text-[#047857] transition font-medium ${
                   location.pathname === '/news' ? 'text-green-700 font-semibold' : ''
                 }`}
               >
@@ -174,7 +176,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/events" 
-                className={`hover:text-green-700 transition font-medium ${
+                className={`hover:text-[#047857] transition font-medium ${
                   location.pathname === '/events' ? 'text-green-700 font-semibold' : ''
                 }`}
               >
@@ -184,7 +186,7 @@ const Header = () => {
             <li>
               <Link 
                 to="/contact" 
-                className={`hover:text-green-700 transition font-medium ${
+                className={`hover:text-[#047857] transition font-medium ${
                   location.pathname === '/contact' ? 'text-green-700 font-semibold' : ''
                 }`}
               >
@@ -194,13 +196,14 @@ const Header = () => {
           </ul>
           
           {/* Report Button */}
-          <button className="hidden md:block border-2 border-green-700 text-green-700 px-4 py-2 rounded hover:bg-green-700 hover:text-white transition">
+          <button className="hidden md:block border-2 border-green-700 text-white px-4 py-2 rounded bg-[#25883d] hover:bg-green-800">
             Report an Issue
           </button>
+        </div>
         </div>
       </nav>
     </header>
   );
 };
-
+  
 export default Header;

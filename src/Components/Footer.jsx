@@ -12,21 +12,19 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-green-100">
+    <footer className="bg-[#B5D8AB]">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* About Column */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#25883d] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">FF</span>
-              </div>
-              <div>
-                <div className="font-bold text-[#25883d] text-lg">FAST-FAN</div>
-                <div className="text-xs text-gray-600">Fastfood Association Nepal</div>
-              </div>
-            </div>
+            <div className="mb-4">
+  <img
+    src="/logo.png"
+    alt="FAST-FAN Logo"
+    className="h-12 w-auto object-contain"
+  />
+</div>
             <p className="text-gray-600 text-sm mb-4 leading-relaxed">
               Making the world a better place through constructing elegant hierarchies
             </p>

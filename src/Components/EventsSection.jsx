@@ -38,7 +38,7 @@ const EventsSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-green-600 font-semibold mb-2 uppercase tracking-wide">
+          <p className="text-[#25883D] font-semibold mb-2 uppercase tracking-wide">
             Get Updated About Us
           </p>
           <h2 className="text-3xl md:text-4xl font-bold">
@@ -54,14 +54,14 @@ const EventsSection = () => {
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex gap-4"
             >
               {/* Date Box */}
-              <div className="flex-shrink-0 text-center border-r-2 border-gray-200 pr-4">
+              <div className="shrink-0 text-center border-r-2 border-gray-200 pr-4">
                 <div className="text-sm font-semibold text-gray-600 uppercase">
                   {event.day}
                 </div>
                 <div className="text-4xl font-bold text-gray-800 my-1">
                   {event.date}
                 </div>
-                <Calendar size={20} className="mx-auto text-green-600" />
+                <Calendar size={20} className="mx-auto text-[#25883D]" />
               </div>
               
               {/* Event Details */}
@@ -85,7 +85,7 @@ const EventsSection = () => {
         
         {/* View All Events Button */}
         <div className="text-center mt-10">
-          <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105">
+          <button className="bg-[#25883D] hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105">
             View All Events
           </button>
         </div>

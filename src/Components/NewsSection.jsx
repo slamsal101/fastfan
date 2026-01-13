@@ -67,14 +67,14 @@ const NewsSection = () => {
   
   return (
     <section className="py-16 bg-white" id="news">
-      <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-green-600 font-semibold mb-2 uppercase tracking-wide">
+          <p className="text-[#25883D] font-semibold mb-2 uppercase tracking-wide">
             Our News
           </p>
           <h2 className="text-3xl md:text-4xl font-bold">
-            Explore our <span className="text-green-600">latest News</span>
+            Explore our <span className="text-[#25883D]">latest News</span>
           </h2>
         </div>
         

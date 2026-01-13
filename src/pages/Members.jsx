@@ -68,7 +68,7 @@ const Members = () => {
       location: "Bhaktapur",
       logo: "/api/placeholder/200/200",
       coverImage: "/api/placeholder/1400/400",
-      about: "Fine dining experience with a modern twist.",
+      about: "Fine dining experiencxe with modern touch ... ",
       socialMedia: {
         facebook: "https://facebook.com",
         instagram: "https://instagram.com"
@@ -84,7 +84,7 @@ const Members = () => {
       location: "Kathmandu",
       logo: "/api/placeholder/200/200",
       coverImage: "/api/placeholder/1400/400",
-      about: "A cozy café with a vibrant atmosphere.",
+      about: "A cozy cafe with vibrant looks...",
       socialMedia: {
         facebook: "https://facebook.com",
         instagram: "https://instagram.com"
@@ -117,7 +117,7 @@ const Members = () => {
       {/* Breadcrumb Section */}
       <section className="bg-green-100 py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
+          <h1 className="text-4xl font-bold text-center text-green-800 mb-4">
             Members
           </h1>
           <div className="text-center text-gray-600">

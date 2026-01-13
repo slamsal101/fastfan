@@ -6,8 +6,8 @@ const AssociationOverview = () => {
     <div className="min-h-screen bg-white">
       {/* Breadcrumb Section */}
       <section className="bg-green-100 py-12">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
+        <div className="max-w-6xl mx-auto px-6">
+          <h1 className="text-4xl font-bold text-center text-green-800 mb-4">
             Association Overview
           </h1>
           <div className="text-center text-gray-600">
@@ -22,7 +22,7 @@ const AssociationOverview = () => {
 
       {/* Content Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <div>
