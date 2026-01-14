@@ -1,153 +1,88 @@
 import React, { useState } from 'react';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Newsletter subscription:', email);
     setEmail('');
-    alert('Thank you for subscribing to our newsletter!');
+    alert('Thank you for subscribing!');
   };
-  
+
   return (
     <footer className="bg-[#B5D8AB]">
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* About Column */}
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+
+          {/* Logo & Description */}
           <div>
-            <div className="mb-4">
-  <img
-    src="/logo.png"
-    alt="FAST-FAN Logo"
-    className="h-12 w-auto object-contain"
-  />
-</div>
-            <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+            <img
+              src="/logo.png"
+              alt="FAST-FAN Logo"
+              className="h-12 mb-4"
+            />
+            <p className="text-sm text-gray-700 max-w-sm mb-4">
               Making the world a better place through constructing elegant hierarchies
             </p>
-            <div className="flex gap-3">
-              <a 
-                href="#" 
-                className="text-gray-600 hover:text-green-700 transition"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-600 hover:text-green-700 transition"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-600 hover:text-green-700 transition"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
+
+            <div className="flex gap-4 text-gray-700">
+              <Facebook size={18} />
+              <Twitter size={18} />
+              <Instagram size={18} />
             </div>
           </div>
-          
-          {/* Info Column */}
+
+          {/* Info Links */}
           <div>
-            <h3 className="font-bold text-gray-800 mb-4">Info</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#home" className="text-gray-600 hover:text-green-700 transition">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#career" className="text-gray-600 hover:text-green-700 transition">
-                  Career
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-gray-600 hover:text-green-700 transition">
-                  About us
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-600 hover:text-green-700 transition">
-                  Contact
-                </a>
-              </li>
+            <h4 className="font-semibold text-gray-900 mb-3">Info</h4>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>Home</li>
+              <li>Career</li>
+              <li>About us</li>
+              <li>News</li>
+              <li>Blogs</li>
+              <li>Events</li>
             </ul>
           </div>
-          
-          {/* Quick Links Column */}
+
+          {/* Newsletter */}
           <div>
-            <h3 className="font-bold text-gray-800 mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#news" className="text-gray-600 hover:text-green-700 transition">
-                  News
-                </a>
-              </li>
-              <li>
-                <a href="#blogs" className="text-gray-600 hover:text-green-700 transition">
-                  Blogs
-                </a>
-              </li>
-              <li>
-                <a href="#events" className="text-gray-600 hover:text-green-700 transition">
-                  Events
-                </a>
-              </li>
-              <li>
-                <a href="#gallery" className="text-gray-600 hover:text-green-700 transition">
-                  Gallery
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Newsletter Column */}
-          <div>
-            <h3 className="font-bold text-gray-800 mb-4">Subscribe to our newsLetter</h3>
-            <p className="text-sm text-gray-600 mb-4">
+            <h4 className="font-semibold text-gray-900 mb-3">
+              Subscribe to our newsletter
+            </h4>
+            <p className="text-sm text-gray-700 mb-4">
               The latest news, articles, and resources, sent to your inbox weekly
             </p>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
+
+            <form
+              onSubmit={handleSubmit}
+              className="flex items-center gap-2"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600 text-sm"
+                className="flex-1 px-4 py-2 rounded border border-gray-300 text-sm focus:outline-none"
               />
-              <button 
+              <button
                 type="submit"
-                className="bg-[#25883d] hover:bg-green-800 text-white px-6 py-2 rounded font-semibold transition"
+                className="bg-[#25883d] text-white px-5 py-2 rounded text-sm font-semibold hover:bg-green-800 transition"
               >
                 Submit
               </button>
             </form>
           </div>
+
         </div>
       </div>
-      
-      {/* Bottom Bar */}
-      <div className="border-t border-green-200">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-            <p>© 2025 FAST-FAN. All rights reserved.</p>
-            <div className="flex gap-4 mt-2 md:mt-0">
-              <a href="#privacy" className="hover:text-green-700 transition">
-                Privacy Policy
-              </a>
-              <a href="#terms" className="hover:text-green-700 transition">
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </div>
+
+      {/* Bottom Copyright */}
+      <div className="text-center text-sm text-gray-700 pb-6">
+        © 2025 FAST-FAN. All rights reserved
       </div>
     </footer>
   );

@@ -48,7 +48,7 @@ const Header = () => {
       <Twitter size={16} />
       <Instagram size={16} />
     </div>
-    <div className="hidden md:flex gap-6">
+    <div className="flex flex-col md:flex-row gap-3 md:gap-6">
       <span className="flex items-center gap-1">📞 985868569, 98552896</span>
       <span className="flex items-center gap-1">✉️ foodassociationnepal@gmail.com</span>
     </div>

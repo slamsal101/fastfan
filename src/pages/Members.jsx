@@ -130,7 +130,7 @@ const Members = () => {
 
       {/* Content Section */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-6">
           {/* Filter Buttons and Add New Member */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
             <div className="flex gap-2 flex-wrap">
