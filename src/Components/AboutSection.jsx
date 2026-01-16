@@ -43,13 +43,7 @@ const AboutSection = () => {
               standards. They specialize in handling complex operations while 
               maintaining the highest level of service delivery.
             </p>
-            <a 
-              href="#about" 
-              className="text-[#25883d] font-semibold flex items-center gap-2 hover:gap-3 transition-all group"
-            >
-              See More 
-              <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+           
           </div>
         </div>
       </div>

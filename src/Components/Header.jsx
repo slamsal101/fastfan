@@ -196,9 +196,13 @@ const Header = () => {
           </ul>
           
           {/* Report Button */}
-          <button className="hidden md:block border-2 border-green-700 text-white px-4 py-2 rounded bg-[#25883d] hover:bg-green-800">
+           {/* Report Button */}
+          <Link 
+            to="/report-issue"
+            className="hidden md:block border-2 border-green-700 text-green-700 px-4 py-2 rounded hover:bg-green-700 hover:text-white transition text-center"
+          >
             Report an Issue
-          </button>
+          </Link>
         </div>
         </div>
       </nav>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import {Link} from "react-router-dom";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,12 +57,12 @@ const HeroSection = () => {
                 {slides[currentSlide].description}
               </p>
               <div className="flex gap-4">
+                <Link to="/contact">
                 <button className="bg-[#25883d] text-white px-6 py-3 rounded font-semibold transition transform hover:scale-105">
                   Contact Us
                 </button>
-                <button className="bg-[#FFFFFF20] border border-white px-6 py-3 rounded font-semibold backdrop-blur transition">
-                  Explore more
-                </button>
+                </Link>
+               
               </div>
             </div>
           </div>

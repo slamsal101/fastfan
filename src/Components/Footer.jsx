@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Newsletter subscription:', email);
     setEmail('');
-    alert('Thank you for subscribing!');
+    alert('Thank you for subscribing to our newsletter!');
   };
-
+  
   return (
     <footer className="bg-[#B5D8AB]">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-
-          {/* Logo & Description */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-4 gap-8">
           <div>
+           
             <img
               src="/logo.png"
               alt="FAST-FAN Logo"
@@ -27,62 +27,129 @@ const Footer = () => {
               Making the world a better place through constructing elegant hierarchies
             </p>
 
-            <div className="flex gap-4 text-gray-700">
-              <Facebook size={18} />
-              <Twitter size={18} />
-              <Instagram size={18} />
+            <div className="flex gap-3">
+              <a 
+                href="https://facebook.com" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-green-700 transition"
+                aria-label="Facebook"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="text-gray-600 hover:text-green-700 transition"
+                aria-label="Twitter"
+              >
+                <Twitter size={20} />
+              </a>
+              <a 
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="text-gray-600 hover:text-green-700 transition"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
             </div>
           </div>
-
-          {/* Info Links */}
+          
           <div>
-            <h4 className="font-semibold text-gray-900 mb-3">Info</h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>Home</li>
-              <li>Career</li>
-              <li>About us</li>
-              <li>News</li>
-              <li>Blogs</li>
-              <li>Events</li>
+            <h3 className="font-bold text-gray-800 mb-4">Info</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/" className="text-gray-600 hover:text-green-700 transition">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/overview" className="text-gray-600 hover:text-green-700 transition">
+                  Career
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/overview" className="text-gray-600 hover:text-green-700 transition">
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-600 hover:text-green-700 transition">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
-
-          {/* Newsletter */}
+          
           <div>
-            <h4 className="font-semibold text-gray-900 mb-3">
-              Subscribe to our newsletter
-            </h4>
-            <p className="text-sm text-gray-700 mb-4">
+            <h3 className="font-bold text-gray-800 mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/news" className="text-gray-600 hover:text-green-700 transition">
+                  News
+                </Link>
+              </li>
+              <li>
+                <Link to="/news" className="text-gray-600 hover:text-green-700 transition">
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link to="/events" className="text-gray-600 hover:text-green-700 transition">
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/members" className="text-gray-600 hover:text-green-700 transition">
+                  Gallery
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="font-bold text-gray-800 mb-4">Subscribe to our newsletter</h3>
+            <p className="text-sm text-gray-600 mb-4">
               The latest news, articles, and resources, sent to your inbox weekly
             </p>
-
-            <form
-              onSubmit={handleSubmit}
-              className="flex items-center gap-2"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
+            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 px-4 py-2 rounded border border-gray-300 text-sm focus:outline-none"
+                className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600 text-sm"
               />
-              <button
+              <button 
                 type="submit"
-                className="bg-[#25883d] text-white px-5 py-2 rounded text-sm font-semibold hover:bg-green-800 transition"
+                className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded font-semibold transition"
               >
                 Submit
               </button>
             </form>
           </div>
-
         </div>
       </div>
-
-      {/* Bottom Copyright */}
-      <div className="text-center text-sm text-gray-700 pb-6">
+      
+      <div className="border-t border-green-200">
+        <div className="container mx-auto px-4 py-4">
+           <div className="text-center text-sm text-gray-700 pb-6">
         © 2025 FAST-FAN. All rights reserved
+      
+            <div className="container  gap-4 mx-auto px-4 py-4">
+              <Link to="/contact" className="hover:text-green-700 transition">
+                Privacy Policy
+              </Link>
+              <Link to="/contact" className="hover:text-green-700 transition">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

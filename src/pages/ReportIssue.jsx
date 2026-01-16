@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Contactform() {
- const [formData, setFormData] = useState({
+const ReportIssue = () => {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -19,8 +20,8 @@ function Contactform() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for contacting us! We will get back to you soon.');
+    console.log('Issue reported:', formData);
+    alert('Thank you for reporting the issue! We will investigate and get back to you soon.');
     // Reset form
     setFormData({
       name: '',
@@ -32,7 +33,37 @@ function Contactform() {
   };
 
   return (
-    <div>
+    <div className="min-h-screen bg-white">
+      {/* Breadcrumb Section */}
+      <section className="bg-green-100 py-12">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
+            Report an Issue
+          </h1>
+          <div className="text-center text-gray-600">
+            <Link to="/" className="hover:text-green-700">
+              Home
+            </Link>
+            <span className="mx-2">{'>'}</span>
+            <span className="text-green-700 font-semibold">Report an Issue</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Report Form Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Form Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              Report a Problem or Concern
+            </h2>
+            <p className="text-gray-600">
+              Help us improve by reporting any issues you've encountered
+            </p>
+          </div>
+
+          {/* Report Form */}
           <div className="bg-white rounded-lg p-8">
             <form onSubmit={handleSubmit}>
               {/* Name and Email Row */}
@@ -46,7 +77,7 @@ function Contactform() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Ram Kumar"
+                    placeholder="John Doe"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
@@ -61,7 +92,7 @@ function Contactform() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Ram@gmail.com"
+                    placeholder="john@gmail.com"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
@@ -87,30 +118,35 @@ function Contactform() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
+                    Issue Type
                   </label>
-                  <input
-                    type="text"
+                  <select
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Enter here"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  />
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white"
+                  >
+                    <option value="">Select issue type</option>
+                    <option value="Food Safety">Food Safety Concern</option>
+                    <option value="Quality">Quality Issue</option>
+                    <option value="Service">Service Complaint</option>
+                    <option value="Hygiene">Hygiene Problem</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
               </div>
 
               {/* Message Field */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
+                  Describe the Issue
                 </label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Enter Message"
+                  placeholder="Please provide detailed information about the issue..."
                   rows="6"
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none"
@@ -123,13 +159,26 @@ function Contactform() {
                   type="submit"
                   className="bg-green-700 hover:bg-green-800 text-white px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105"
                 >
-                  Submit
+                  Submit Report
                 </button>
               </div>
             </form>
           </div>
-    </div>
-  )
-}
 
-export default Contactform
+          {/* Additional Info */}
+          <div className="mt-8 p-6 bg-green-50 rounded-lg">
+            <h3 className="font-bold text-gray-800 mb-2">What happens next?</h3>
+            <ul className="text-sm text-gray-700 space-y-2">
+              <li>• Your report will be reviewed by our team within 24-48 hours</li>
+              <li>• We will contact you via email or phone for any clarifications</li>
+              <li>• Appropriate action will be taken based on the severity of the issue</li>
+              <li>• You will be notified about the resolution</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ReportIssue;

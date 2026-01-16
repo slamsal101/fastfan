@@ -15,6 +15,7 @@ import EventDetail from './pages/EventDetail';
 import NewsDetail from './pages/NewsDetail';
 import NewsNotices from './pages/NewsNotices';
 import ContactUs from './pages/ContactUs';
+import ReportIssue from './pages/ReportIssue';
 
 
 const Layout =({children}) => {
@@ -62,6 +63,9 @@ return(
 
 
         <Route path="/contact" element={<ContactUs/>}/>
+
+         {/* report issue page */}
+          <Route path="/report-issue" element={<ReportIssue />} />
         
 
       </Routes>
