@@ -14,10 +14,10 @@ const Footer = () => {
   
   return (
     <footer className="bg-[#B5D8AB]">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-34 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-start gap-y-8">
           <div>
-           
+      
             <img
               src="/logo.png"
               alt="FAST-FAN Logo"
@@ -66,11 +66,7 @@ const Footer = () => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link to="/about/overview" className="text-gray-600 hover:text-green-700 transition">
-                  Career
-                </Link>
-              </li>
+              
               <li>
                 <Link to="/about/overview" className="text-gray-600 hover:text-green-700 transition">
                   About us
@@ -92,46 +88,17 @@ const Footer = () => {
                   News
                 </Link>
               </li>
-              <li>
-                <Link to="/news" className="text-gray-600 hover:text-green-700 transition">
-                  Blogs
-                </Link>
-              </li>
+              
               <li>
                 <Link to="/events" className="text-gray-600 hover:text-green-700 transition">
                   Events
                 </Link>
               </li>
-              <li>
-                <Link to="/members" className="text-gray-600 hover:text-green-700 transition">
-                  Gallery
-                </Link>
-              </li>
+              
             </ul>
           </div>
           
-          <div>
-            <h3 className="font-bold text-gray-800 mb-4">Subscribe to our newsletter</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              The latest news, articles, and resources, sent to your inbox weekly
-            </p>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-600 text-sm"
-              />
-              <button 
-                type="submit"
-                className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded font-semibold transition"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
+          
         </div>
       </div>
       
@@ -140,7 +107,7 @@ const Footer = () => {
            <div className="text-center text-sm text-gray-700 pb-6">
         © 2025 FAST-FAN. All rights reserved
       
-            <div className="container  gap-4 mx-auto px-4 py-4">
+            <div className="container mx-auto px-4 py-4">
               <Link to="/contact" className="hover:text-green-700 transition">
                 Privacy Policy
               </Link>

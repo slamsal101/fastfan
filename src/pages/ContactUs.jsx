@@ -4,7 +4,6 @@ import Contactform from '../Components/Contactform';
 
 const ContactUs = () => {
   
-
   return (
     <div className="min-h-screen bg-white">
       {/* Breadcrumb Section */}
@@ -32,7 +31,7 @@ const ContactUs = () => {
               Any Queries? Ask Anything!!
             </h2>
           </div>
-
+    
          <Contactform />
 
         </div>
